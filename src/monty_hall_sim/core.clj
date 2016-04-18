@@ -1,5 +1,6 @@
 (ns monty-hall-sim.core
-  (:require [clojure.math.combinatorics :as combo])
+  (:require [clojure.math.combinatorics :as combo]
+            [clojure.tools.cli :as cli])
   (:gen-class))
 
 (def num-doors 3)

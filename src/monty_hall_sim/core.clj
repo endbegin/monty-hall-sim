@@ -1,6 +1,5 @@
 (ns monty-hall-sim.core
-  (:require [clojure.math.combinatorics :as combo]
-            [clojure.tools.cli :as cli])
+  (:require [clojure.math.combinatorics :as combo])
   (:gen-class))
 
 (def num-doors 3)
@@ -35,9 +34,10 @@
              (first)))
       (game pick1))))
 
-(defn -main [times]
-  (let [play-switch (into [] (repeatedly times #(play true)))
+(defn -main [runs]
+  (let [times (Integer/parseInt (str runs))
+        play-switch (into [] (repeatedly times #(play true)))
         switch-wins (count (filter #(= % :car) play-switch))
         play-noswitch (into [] (repeatedly times #(play false)))
         no-switch-wins (count (filter #(= % :car) play-noswitch))]
-    {:switch (float (/ switch-wins times)) :no-switch (float (/ no-switch-wins times))}))
+    (println {:switch (float (/ switch-wins times)) :no-switch (float (/ no-switch-wins times))})))

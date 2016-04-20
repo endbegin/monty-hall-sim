@@ -4,13 +4,17 @@ This is a simulation of the Monty-Hall problem. See https://en.wikipedia.org/wik
 
 ## Installation
 
-Clone, and create a JAR file with "lein uberjar"
+Clone, and create a JAR file with
+
+    lein uberjar
+
+to create a JAR file in the target/ directory.
 
 ## Usage
 
-    $ java -jar monty-hall-sim-0.1.0-standalone.jar times
+    $ java -jar monty-hall-sim-0.1.0-standalone.jar 1000
 
-where 'times' is the number of times to run the game.
+to run the game 1000 times.
 
 The result of the simulation is a clojure map that displays the percentage of wins if the player switched and did not switch.
 
